@@ -1,0 +1,443 @@
+/* signup.module.css - Medical Professional Signup Form */
+
+.medicalSignupContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.medicalSignupContainer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+  animation: backgroundFloat 20s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(2deg) scale(1.05);
+  }
+}
+
+.medicalSignupCard {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.8);
+  width: 100%;
+  max-width: 480px;
+  animation: containerSlideIn 0.8s ease-out;
+  position: relative;
+}
+
+@keyframes containerSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.medicalIcon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+.medicalIcon svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.medicalSignupTitle {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.medicalSignupSubtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.medicalErrorMessage {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+  animation: errorShake 0.5s ease-in-out;
+}
+
+.medicalSuccessMessage {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #bbf7d0;
+  color: #059669;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+  animation: successPulse 0.5s ease-in-out;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes successPulse {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.medicalSignupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: formFadeIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes formFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.medicalInputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.medicalLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.medicalInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.medicalInput:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 
+    0 0 0 3px rgba(59, 130, 246, 0.1),
+    0 2px 8px rgba(59, 130, 246, 0.08);
+  transform: translateY(-1px);
+}
+
+.medicalInput:focus + .medicalLabel {
+  color: #3b82f6;
+}
+
+.medicalInput:valid {
+  border-color: #10b981;
+}
+
+.medicalInput:hover {
+  border-color: #cbd5e1;
+}
+
+.medicalInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.medicalSelect {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.medicalSelect:focus {
+  border-color: #3b82f6;
+  box-shadow: 
+    0 0 0 3px rgba(59, 130, 246, 0.1),
+    0 2px 8px rgba(59, 130, 246, 0.08);
+  transform: translateY(-1px);
+}
+
+.medicalSelect:hover {
+  border-color: #cbd5e1;
+}
+
+.medicalSubmitBtn {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.medicalSubmitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+}
+
+.medicalSubmitBtn:active {
+  transform: translateY(-1px);
+}
+
+.medicalSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  background: #9ca3af;
+}
+
+.medicalSubmitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.medicalSubmitBtn:hover::before {
+  left: 100%;
+}
+
+.medicalTrustIndicators {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  opacity: 0.6;
+}
+
+.trustIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.trustIndicator svg {
+  width: 16px;
+  height: 16px;
+}
+
+.medicalFooterText {
+  text-align: center;
+  margin-top: 2rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.signinText {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out 0.6s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.signinLink {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.signinLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.signinLink:hover::after {
+  width: 100%;
+}
+
+.signinLink:hover {
+  color: #1d4ed8;
+}
+
+/* Loading state animation */
+.medicalSubmitBtn.loading {
+  pointer-events: none;
+  color: transparent;
+}
+
+.medicalSubmitBtn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: medicalSpin 1s linear infinite;
+}
+
+@keyframes medicalSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Two column layout for larger forms */
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .twoColumnGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .medicalSignupCard {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .medicalSignupTitle {
+    font-size: 1.5rem;
+  }
+  
+  .medicalInput,
+  .medicalSelect {
+    padding: 0.75rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .medicalSignupCard,
+  .medicalSignupForm,
+  .medicalSignupTitle,
+  .signinText {
+    animation: none;
+  }
+  
+  .medicalSignupContainer::before {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .medicalSignupCard {
+    border: 2px solid #000;
+  }
+  
+  .medicalInput,
+  .medicalSelect {
+    border-color: #000;
+  }
+  
+  .medicalSubmitBtn {
+    background: #000;
+    border: 2px solid #000;
+  }
+}
