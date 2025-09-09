@@ -1,125 +1,107 @@
+// LandingPage.js (Server Component)
 import Link from "next/link";
-import { getServerSession } from "next-auth";
 import styles from "../styles/landing.module.css";
+interface LandingPageProps {
+  session?: unknown; // Replace 'unknown' with your actual session type if available
+}
 
-export default async function LandingPage() {
-  const session = await getServerSession();
-
+export default function LandingPage({ session }: LandingPageProps) {
   const features = [
+    {
+      icon: "🗺️",
+      title: "Connect with Nearest Doctor",
+      description:
+        "Find healthcare professionals near you based on your medical needs. Our smart map ensures fast, accurate connections.",
+    },
+    {
+      icon: "🌐",
+      title: "Language Independent",
+      description:
+        "Upload medical documents in any language — our AI understands and summarizes them for you.",
+    },
+    {
+      icon: "📝",
+      title: "AI Summarized Reports",
+      description:
+        "Get simplified summaries of complex medical reports, so you and your family can easily understand them.",
+    },
     {
       icon: "🔒",
       title: "Secure Document Storage",
-      description: "Your medical records are encrypted and stored securely with bank-level security. Access your documents from anywhere, anytime."
-    },
-    {
-      icon: "📱",
-      title: "Mobile-First Design",
-      description: "Access your health records on any device. Our responsive design ensures a seamless experience across all platforms."
+      description:
+        "Your medical records are encrypted and stored with bank-level security. Access them from anywhere, anytime.",
     },
     {
       icon: "🤖",
       title: "AI Health Assistant",
-      description: "Chat with our intelligent AI assistant to get insights about your health records, medication reminders, and health advice."
-    },
-    {
-      icon: "📊",
-      title: "Health Analytics",
-      description: "Visualize your health trends with interactive charts and reports. Track your progress over time with detailed analytics."
+      description:
+        "Chat with our AI assistant for instant health insights, reminders, and advice tailored to you.",
     },
     {
       icon: "👥",
       title: "Family Health Management",
-      description: "Manage health records for your entire family in one place. Share records securely with healthcare providers."
+      description:
+        "Manage and share health records securely for your entire family in one place.",
     },
-    {
-      icon: "🏥",
-      title: "Healthcare Integration",
-      description: "Seamlessly integrate with hospitals, clinics, and healthcare providers. Import records directly from medical institutions."
-    }
   ];
 
   const stats = [
     { number: "10,000+", label: "Active Users" },
     { number: "50,000+", label: "Documents Stored" },
     { number: "99.9%", label: "Uptime" },
-    { number: "24/7", label: "Support" }
+    { number: "24/7", label: "Support" },
   ];
-  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   return (
     <div className={styles.container}>
-      {/* Navbar */}
-      <nav className={styles.navbar}>
-        <div className={styles.logo}>Arogya-Locker</div>
-
-        {/* Center Nav Links */}
-        <div className={styles.navCenter}>
-          <Link href="/documents" className={styles.navLink}>Documents</Link>
-          <Link href="/chat" className={styles.navLink}>Chat</Link>
-          <Link href="/profile" className={styles.navLink}>Profile</Link>
-        </div>
-
-        {/* Right Side */}
-        <div className={styles.navLinks}>
-          {!session ? (
-            <>
-              <Link href="/signin">
-                <button className={`${styles.btn} ${styles.signin}`}>Sign In</button>
-              </Link>
-              <Link href="/signup">
-                <button className={`${styles.btn} ${styles.signup}`}>Sign Up</button>
-              </Link>
-            </>
-          ) : (
-            <form action="/api/auth/signout" method="post">
-              <button type="submit" className={`${styles.btn} ${styles.logout}`}>
-                Logout
-              </button>
-            </form>
-          )}
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <main className={styles.hero}>
+      <section className={styles.hero}>
         <h1 className={styles.heroTitle}>
-          Your Health Records,
-          <br />
-          Secure & Accessible
+          Connecting You to Care, <br /> Anytime, Anywhere 🌍
         </h1>
         <p className={styles.heroSubtitle}>
-          Arogya-Locker is your comprehensive digital health companion. Store, organize, and access your medical records securely. Get AI-powered insights and manage your family's health with confidence.
+          Store, manage, and understand your medical records with ease. 
+          Arogya-Locker connects you to nearby doctors and provides AI-powered summaries in any language.
         </p>
-
         <div className={styles.heroActions}>
-          <Link href="/dashboard" className={styles.getStarted}>
-            Get Started Free
+          <Link href="/signup" className={styles.getStarted}>
+            Get Started
           </Link>
           <Link href="/chat" className={styles.chat}>
             Try AI Assistant
           </Link>
         </div>
+      </section>
 
-        {/* Stats Section */}
-        <section className={styles.statsSection}>
-          <div className={styles.statsGrid}>
-            {stats.map((stat, index) => (
-              <div key={index} className={styles.statItem}>
-                <span className={styles.statNumber}>{stat.number}</span>
-                <span className={styles.statLabel}>{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
+      {/* Map Section */}
+      <section className={styles.mapSection}>
+        <h2 className={styles.sectionTitle}>Find Doctors Near You</h2>
+        <p className={styles.sectionSubtitle}>
+          Our smart map helps you connect with healthcare providers closest to you, based on your needs.
+        </p>
+        <div className={styles.mapPlaceholder}>
+          🗺️ Interactive Map Coming Soon
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className={styles.statsSection}>
+        <div className={styles.statsGrid}>
+          {stats.map((stat, index) => (
+            <div key={index} className={styles.statItem}>
+              <span className={styles.statNumber}>{stat.number}</span>
+              <span className={styles.statLabel}>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className={styles.featuresSection}>
-        <h2 className={styles.sectionTitle}>Why Choose Arogya-Locker?</h2>
+        <h2 className={styles.sectionTitle}>Features</h2>
         <p className={styles.sectionSubtitle}>
-          Discover the powerful features that make managing your health records effortless and secure.
+          Discover how Arogya-Locker simplifies healthcare management for you and your family.
         </p>
-        
         <div className={styles.featuresGrid}>
           {features.map((feature, index) => (
             <div key={index} className={styles.featureCard}>
@@ -130,12 +112,6 @@ export default async function LandingPage() {
           ))}
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} Arogya-Locker. All rights reserved.</p>
-        <p>Empowering you to take control of your health journey.</p>
-      </footer>
     </div>
   );
 }

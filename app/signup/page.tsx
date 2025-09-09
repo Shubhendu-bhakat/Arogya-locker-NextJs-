@@ -173,8 +173,9 @@ export default function SignupPage() {
             </div>
 
             <div className={styles.medicalInputGroup}>
-              <label className={styles.medicalLabel}>Sex (Optional)</label>
+              <label className={styles.medicalLabel} htmlFor="sex-select">Sex (Optional)</label>
               <select
+                id="sex-select"
                 name="sex"
                 value={formData.sex}
                 onChange={handleInputChange}

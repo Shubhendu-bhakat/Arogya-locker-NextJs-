@@ -72,14 +72,14 @@ export default function SignInPage() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{display: 'inline-block', marginRight: '8px'}}>
               <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
             </svg>
-            Authentication successful! Redirecting to dashboard...
+            Authentication successful! Redirecting to Home...
           </div>
 
           <Link 
-            href="/dashboard"
+            href="/documents"
             className={`${styles.button} ${styles.successButton}`}
           >
-            Go to Dashboard
+            Click here to go to your medical documents
           </Link>
 
           <p className={styles.loginText}>

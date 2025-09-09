@@ -1,0 +1,155 @@
+.chatWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f3f4f6;
+  padding: 10px;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chatBox {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Messages */
+.message {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.user {
+  align-self: flex-end;
+  background: #2563eb;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.bot {
+  align-self: flex-start;
+  background: #e5e7eb;
+  color: #111827;
+  border-bottom-left-radius: 4px;
+}
+
+.imageMessage {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Input Area */
+.inputArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.textInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.textInput:focus {
+  border-color: #2563eb;
+}
+
+/* Buttons */
+.uploadLabel {
+  cursor: pointer;
+  padding: 8px 14px;
+  background: #f59e0b;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease-in-out;
+}
+
+.uploadLabel:hover {
+  background: #d97706;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.sendBtn {
+  padding: 10px 16px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.sendBtn:hover {
+  background: #059669;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .chatContainer {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .message {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .textInput {
+    font-size: 13px;
+  }
+
+  .uploadLabel,
+  .sendBtn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
