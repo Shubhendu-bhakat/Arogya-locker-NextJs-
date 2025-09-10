@@ -5,7 +5,7 @@ interface LandingPageProps {
   session?: unknown; // Replace 'unknown' with your actual session type if available
 }
 
-export default function LandingPage({ session }: LandingPageProps) {
+export default async function LandingPage({ session }: LandingPageProps) {
   const features = [
     {
       icon: "🗺️",
@@ -51,7 +51,8 @@ export default function LandingPage({ session }: LandingPageProps) {
     { number: "99.9%", label: "Uptime" },
     { number: "24/7", label: "Support" },
   ];
-
+// Correct syntax
+await new Promise(resolve => setTimeout(resolve, 3000));
   return (
     <div className={styles.container}>
       {/* Hero Section */}
