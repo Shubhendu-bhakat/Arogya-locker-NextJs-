@@ -22,22 +22,13 @@ export default function DocumentsPage() {
     const fetchDocuments = async () => {
       try {
         const session = await getSession();
-        console.log("seassion status from useEffect",session);
         //@ts-ignore
         if (!session?.user?.email) {
           setLoading(false);
           return;
         }
-        //prisma cant run in browser so figure out anything else 
-        const userPrisma = await prisma.user.findFirst({
-          where:{
-            email:session.user.email
-          }
-        })
         //@ts-ignore
-        const res = await axios.get(`/api/auth/documents?userId=${userPrisma?.id}`);
-        console.log("res from API",res)
-        // ✅ API response: res.data.data.documents
+       const res = await axios.get("/api/auth/documents");
         setDocuments(res.data.data?.documents || []);
       } catch (error) {
         console.error("Error fetching documents:", error);
@@ -52,12 +43,9 @@ export default function DocumentsPage() {
   // Delete document handler
   const handleDelete = async (docId: string) => {
     try {
-      const session = await getSession();
-      //@ts-ignore
-      if (!session?.user?.id) return;
-
-      //@ts-ignore
-      await axios.delete(`/api/auth/documents?id=${docId}&userId=${session.user.id}`);
+  
+      //@ts-ignore1
+      await axios.delete(`/api/auth/documents/${docId}`);
 
       setDocuments((prev) => prev.filter((doc) => doc.id !== docId));
     } catch (error) {
