@@ -1,86 +1,158 @@
-// app/api/upload/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+// app/api/auth/documents/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"; // Adjust path as needed
+import { prisma } from "@/app/lib/prisma";
 
-// Configure S3 client
-const s3Client = new S3Client({
-  region: process.env.AWS_REGION!, 
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-  },
-});
-
-const BUCKET_NAME = process.env.S3_BUCKET_NAME!;
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB in bytes
-
-export async function POST(req: NextRequest) {
+// GET documents for authenticated user
+export async function GET(req: NextRequest) {
   try {
-    // Parse the form data
-    const formData = await req.formData();
-    const file = formData.get('file') as File;
-
-    // Check if file is provided
-    if (!file) {
-      return NextResponse.json(
-        { error: 'File is required' },
-        { status: 400 }
-      );
+    const session = await getServerSession(authOptions);
+    if (!session || !session.user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Check file size (10MB limit)
-    if (file.size > MAX_FILE_SIZE) {
-      return NextResponse.json(
-        { error: 'File size should not exceed 10MB' },
-        { status: 400 }
-      );
-    }
+    const { searchParams } = new URL(req.url);
+    const category = searchParams.get("category");
 
-    // Generate unique file name
-    const timestamp = Date.now();
-    const fileName = `${timestamp}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
-
-    // Convert file to buffer
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Upload to S3
-    const uploadCommand = new PutObjectCommand({
-      Bucket: BUCKET_NAME,
-      Key: fileName,
-      Body: buffer,
-      ContentType: file.type,
-      ContentLength: file.size,
-      // Optional: Set ACL to public-read if you want files to be publicly accessible
-      // ACL: 'public-read',
+    // Find user by email or id from session
+    const user = await prisma.user.findFirst({
+      where: {
+        OR: [
+          //@ts-ignore
+          { email: session.user.email },
+           //@ts-ignore
+          { id: session.user.id },
+        ],
+      },
     });
 
-    const result = await s3Client.send(uploadCommand);
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
 
-    // Generate the file URL
-    const fileUrl = `https://${BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
+    // Build where clause
+    const whereClause: any = { userId: user.id };
+    if (category && category !== "ALL") {
+      whereClause.category = category;
+    }
+
+    // Fetch documents
+    const documents = await prisma.document.findMany({
+      where: whereClause,
+      orderBy: { createdAt: "desc" },
+      include: {
+        user: {
+          select: { id: true, username: true, email: true },
+        },
+      },
+    });
+
+    // Get category counts
+    const categoryCounts = await prisma.document.groupBy({
+      by: ["category"],
+      where: { userId: user.id },
+      _count: { category: true },
+    });
+
+    const formattedCategoryCounts = categoryCounts.reduce((acc: any, item: any) => {
+      acc[item.category] = item._count.category;
+      return acc;
+    }, {} as Record<string, number>);
 
     return NextResponse.json({
       success: true,
-      message: 'File uploaded successfully',
       data: {
-        fileName,
-        fileUrl,
-        fileSize: file.size,
-        fileType: file.type,
-        uploadedAt: new Date().toISOString(),
-        etag: result.ETag,
-      }
+        documents,
+        totalDocuments: documents.length,
+        categoryCounts: formattedCategoryCounts,
+      },
+    });
+  } catch (error) {
+    console.error("Get documents error:", error);
+    return NextResponse.json(
+      {
+        error: "Failed to fetch documents",
+        details:
+          process.env.NODE_ENV === "development"
+            ? error instanceof Error
+              ? error.message
+              : "Unknown error"
+            : "Internal server error",
+      },
+      { status: 500 }
+    );
+  }
+}
+
+// DELETE document for authenticated user
+export async function DELETE(req: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions);
+
+    if (!session || !session.user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const { searchParams } = new URL(req.url);
+    const documentIdParam = searchParams.get("id");
+
+    if (!documentIdParam) {
+      return NextResponse.json(
+        { error: "Document ID required" },
+        { status: 400 }
+      );
+    }
+
+    const documentId = parseInt(documentIdParam);
+    if (isNaN(documentId)) {
+      return NextResponse.json({ error: "Invalid document ID" }, { status: 400 });
+    }
+
+    // Find user by email or id from session
+    const user = await prisma.user.findFirst({
+      where: {
+        OR: [
+           //@ts-ignore
+          { email: session.user.email },
+           //@ts-ignore
+          { id: session.user.id },
+        ],
+      },
     });
 
-  } catch (error) {
-    console.error('Upload error:', error);
-    
-    return NextResponse.json(
-      { 
-        error: 'Failed to upload file',
-        details: error instanceof Error ? error.message : 'Unknown error'
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    // Verify document belongs to user and delete
+    const document = await prisma.document.findFirst({
+      where: {
+        id: documentId,
+        userId: user.id,
       },
+    });
+
+    if (!document) {
+      return NextResponse.json(
+        { error: "Document not found or access denied" },
+        { status: 404 }
+      );
+    }
+
+    // Delete document
+    await prisma.document.delete({
+      where: { id: documentId },
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: "Document deleted successfully",
+    });
+  } catch (error) {
+    console.error("Delete document error:", error);
+    return NextResponse.json(
+      { error: "Failed to delete document" },
       { status: 500 }
     );
   }
