@@ -1,30 +1,22 @@
-// app/api/auth/documents/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"; // Adjust path as needed
+import { authOptions } from "../[...nextauth]/route"; // ✅ import correct auth config
 import { prisma } from "@/app/lib/prisma";
 
-// GET documents for authenticated user
 export async function GET(req: NextRequest) {
   try {
     const session = await getServerSession(authOptions);
-    if (!session || !session.user) {
+    console.log("This is session",session);
+    if (!session || !session.user?.email) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const { searchParams } = new URL(req.url);
     const category = searchParams.get("category");
 
-    // Find user by email or id from session
-    const user = await prisma.user.findFirst({
-      where: {
-        OR: [
-          //@ts-ignore
-          { email: session.user.email },
-           //@ts-ignore
-          { id: session.user.id },
-        ],
-      },
+    // Find the user by email
+    const user = await prisma.user.findUnique({
+      where: { email: session.user.email },
     });
 
     if (!user) {
@@ -42,9 +34,7 @@ export async function GET(req: NextRequest) {
       where: whereClause,
       orderBy: { createdAt: "desc" },
       include: {
-        user: {
-          select: { id: true, username: true, email: true },
-        },
+        user: { select: { id: true, username: true, email: true } },
       },
     });
 
@@ -55,10 +45,13 @@ export async function GET(req: NextRequest) {
       _count: { category: true },
     });
 
-    const formattedCategoryCounts = categoryCounts.reduce((acc: any, item: any) => {
-      acc[item.category] = item._count.category;
-      return acc;
-    }, {} as Record<string, number>);
+    const formattedCategoryCounts = categoryCounts.reduce(
+      (acc: Record<string, number>, item) => {
+        acc[item.category] = item._count.category;
+        return acc;
+      },
+      {}
+    );
 
     return NextResponse.json({
       success: true,
@@ -84,4 +77,3 @@ export async function GET(req: NextRequest) {
     );
   }
 }
-
