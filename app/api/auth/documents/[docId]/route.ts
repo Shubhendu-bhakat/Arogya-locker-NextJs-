@@ -48,8 +48,6 @@ export async function DELETE(
         { status: 404 }
       );
     }
-
-    // 🟢 Delete from S3 first (using fileName as the S3 key)
     if (document.fileName) {
       try {
         await s3.send(
