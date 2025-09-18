@@ -3,6 +3,7 @@ import { authOptions } from "../api/auth/[...nextauth]/route"
 import Link from "next/link"
 import { prisma } from "../lib/prisma"
 import styles from "../../styles/profile.module.css"
+import axios from "axios";
 
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions)
@@ -50,77 +51,54 @@ export default async function ProfilePage() {
   
   // Generate user avatar with first letter
   const userInitial = (user.username || user.email || "U").charAt(0).toUpperCase()
-  
+
+  // Fetch user documents directly from DB
+  const documents = await prisma.document.findMany({
+    where: { userId: user.id },
+    orderBy: { createdAt: "desc" },
+  });
+
   return (
     <div className={styles.container}>
-      <div className={styles.profileCard}>
-        <div className={styles.profileHeader}>
-          <div className={styles.avatarSection}>
-            <div className={styles.avatar}>
-              {userInitial}
-            </div>
-            <div className={styles.patientInfo}>
-              <h1 className={styles.patientName}>{user.username}</h1>
-              <p className={styles.patientId}>Patient ID: #{user.id}</p>
-            </div>
-          </div>
-          <div className={styles.medicalBadge}>
-            <div className={styles.medicalIcon}>
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C13.1 2 14 2.9 14 4V8H18C19.1 8 20 8.9 20 10V12C20 13.1 19.1 14 18 14H14V18C14 19.1 13.1 20 12 20H10C8.9 20 8 19.1 8 18V14H4C2.9 14 2 13.1 2 12V10C2 8.9 2.9 8 4 8H8V4C8 2.9 8.9 2 10 2H12Z"/>
-              </svg>
-            </div>
+      <div className={styles.profileCardSimple}>
+        <div className={styles.profileHeaderSimple}>
+          <div className={styles.avatarSimple}>{userInitial}</div>
+          <div>
+            <div className={styles.patientNameSimple}>{user.username}</div>
+            <div className={styles.patientIdSimple}>Patient ID: #{user.id}</div>
           </div>
         </div>
-        
-        <div className={styles.profileContent}>
-          <h2 className={styles.sectionTitle}>Patient Information</h2>
-          <div className={styles.infoGrid}>
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Full Name</span>
-              <span className={styles.infoValue}>{user.username}</span>
-            </div>
-            
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Email Address</span>
-              <span className={styles.infoValue}>{user.email}</span>
-            </div>
-            
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Phone Number</span>
-              <span className={styles.infoValue}>{user.phone || "Not provided"}</span>
-            </div>
-            
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Age</span>
-              <span className={styles.infoValue}>{user.age ? `${user.age} years` : "Not provided"}</span>
-            </div>
-            
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Gender</span>
-              <span className={styles.infoValue}>{user.sex || "Not specified"}</span>
-            </div>
-            
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Location</span>
-              <span className={styles.infoValue}>{user.location || "Not provided"}</span>
-            </div>
-            
-            <div className={styles.infoItem}>
-              <span className={styles.infoLabel}>Registration Date</span>
-              <span className={styles.infoValue}>{user.createdAt.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}</span>
-            </div>
+        <div className={styles.infoGridSimple}>
+          <div>
+            <span className={styles.infoLabelSimple}>Email:</span> {user.email}
+          </div>
+          <div>
+            <span className={styles.infoLabelSimple}>Phone:</span> {user.phone || "Not provided"}
+          </div>
+          <div>
+            <span className={styles.infoLabelSimple}>Age:</span> {user.age ? `${user.age} years` : "Not provided"}
+          </div>
+          <div>
+            <span className={styles.infoLabelSimple}>Gender:</span> {user.gender || "Not provided"}
           </div>
         </div>
-        
-        <div className={styles.profileFooter}>
-          <div className={styles.lastUpdated}>
-            Last updated: {user.createdAt.toLocaleDateString()}
-          </div>
+        <div className={styles.docsSectionSimple}>
+          <div className={styles.docsTitleSimple}>Your Documents</div>
+          {documents.length === 0 ? (
+            <div className={styles.emptyDocsSimple}>No documents found.</div>
+          ) : (
+            <ul className={styles.docsListSimple}>
+              {documents.map((doc) => (
+                <li key={doc.id} className={styles.docItemSimple}>
+                  <span className={styles.docNameSimple}>{doc.name}</span>
+                  <span className={styles.docCategorySimple}>{doc.category}</span>
+                  <a href={doc.url || '#'} target="_blank" rel="noopener noreferrer" className={styles.docLinkSimple}>
+                    View
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

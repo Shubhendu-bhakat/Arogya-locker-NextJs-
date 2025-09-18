@@ -4,22 +4,32 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e3f6fc;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 24px 0 #1ca7ec22;
 }
-
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #3b82f6;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1ca7ec, #1fdbb6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: filter 0.2s;
+}
+.logo:hover {
+  filter: brightness(1.15) drop-shadow(0 2px 8px #1ca7ec44);
 }
 
 .navCenter {

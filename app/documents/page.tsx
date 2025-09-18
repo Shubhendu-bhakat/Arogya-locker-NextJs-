@@ -6,6 +6,7 @@ import styles from "../../styles/document.module.css";
 import { getSession } from "next-auth/react";
 import Link from "next/link";
 import styles2 from "../../styles/profile.module.css";
+import MedicalLoader from "../(components)/MedicalLoader";
 interface Document {
   id: string;
   name: string;
@@ -58,7 +59,7 @@ export default function DocumentsPage() {
     return acc;
   }, {});
 
-  if (loading) return <p className={styles.progressText}>Loading documents...</p>;
+  if (loading) return <MedicalLoader />;
 
   //If user is not logged in
   if (isLoggedIn === false) {

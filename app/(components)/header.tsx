@@ -10,8 +10,9 @@ export default async function Header() {
 
   return (
     <nav className={styles.navbar}>
-      <Link href="/" className={styles.logo}>
-        Arogya-Locker
+      <Link href="/" className={styles.logo} style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+        <img src="/globe.svg" alt="Arogya-Locker Logo" style={{height: '2.2rem', width: '2.2rem', marginRight: '0.3rem'}} />
+        <span>Arogya-Locker</span>
       </Link>
 
       <div className={styles.navCenter}>

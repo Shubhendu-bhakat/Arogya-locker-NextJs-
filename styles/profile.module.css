@@ -331,3 +331,208 @@
     padding: 1rem;
   }
 }
+
+.docsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.docCard {
+  background: #fafdff;
+  border: 1px solid #e3f6fc;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(28, 167, 236, 0.07);
+  padding: 1.2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.docCard:hover {
+  box-shadow: 0 8px 28px rgba(28, 167, 236, 0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+.docHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+.docName {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #0a4fa3;
+  word-break: break-all;
+}
+.docCategory {
+  font-size: 0.92rem;
+  color: #1ca7ec;
+  background: #e3f6fc;
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+.docLink {
+  margin-top: 0.5rem;
+  color: #1ca7ec;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  background: #f5f7fa;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px #1ca7ec11;
+}
+.docLink:hover, .docLink:focus {
+  background: #1ca7ec;
+  color: #fff;
+  outline: none;
+}
+.emptyDocs {
+  color: #6c757d;
+  font-size: 1.1rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e3f6fc;
+  margin-top: 1rem;
+}
+
+.profileCardSimple {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(28, 167, 236, 0.07);
+  border: 1px solid #e3f6fc;
+  max-width: 480px;
+  width: 100%;
+  margin: 1.2rem auto;
+  padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.profileHeaderSimple {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border-bottom: 1px solid #e3f6fc;
+  padding-bottom: 1.2rem;
+}
+.avatarSimple {
+  width: 56px;
+  height: 56px;
+  background: #1ca7ec;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px #1ca7ec22;
+}
+.patientNameSimple {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0a4fa3;
+}
+.patientIdSimple {
+  font-size: 0.95rem;
+  color: #1769c2;
+  margin-top: 0.2rem;
+}
+.infoGridSimple {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem 1.2rem;
+  font-size: 1rem;
+  color: #22314d;
+}
+.infoLabelSimple {
+  font-weight: 600;
+  color: #1ca7ec;
+  margin-right: 0.3rem;
+}
+.docsSectionSimple {
+  margin-top: 1.5rem;
+}
+.docsTitleSimple {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a4fa3;
+  margin-bottom: 0.7rem;
+}
+.emptyDocsSimple {
+  color: #6c757d;
+  font-size: 1rem;
+  padding: 1rem 0;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e3f6fc;
+}
+.docsListSimple {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.docItemSimple {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #fafdff;
+  border: 1px solid #e3f6fc;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+}
+.docNameSimple {
+  flex: 1 1 0;
+  color: #0a4fa3;
+  font-weight: 500;
+  font-size: 1rem;
+  word-break: break-all;
+}
+.docCategorySimple {
+  color: #1ca7ec;
+  background: #e3f6fc;
+  border-radius: 6px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.docLinkSimple {
+  color: #fff;
+  background: #1ca7ec;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.docLinkSimple:hover, .docLinkSimple:focus {
+  background: #1769c2;
+  outline: none;
+}
+@media (max-width: 600px) {
+  .profileCardSimple {
+    padding: 0.7rem 0.2rem 1rem 0.2rem;
+    margin: 0.7rem auto;
+  }
+  .infoGridSimple {
+    grid-template-columns: 1fr;
+  }
+  .docItemSimple {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+}
