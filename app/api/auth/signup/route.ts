@@ -22,7 +22,6 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const parsed = signupSchema.parse(body);
-
     // Check if user already exists
     const existingUser = await prisma.user.findFirst({
       where: {
@@ -75,12 +74,12 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("Signup error:", error);
-    
     // Handle Zod validation errors
     if (error.name === "ZodError") {
       return NextResponse.json(
-        { error: "Validation failed", details: error.errors },
+        { error: error.issues.map((i:any) => i.message).join("\n"), 
+           details: "Validation failde",
+         },
         { status: 400 }
       );
     }
