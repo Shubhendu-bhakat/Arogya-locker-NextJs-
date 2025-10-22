@@ -1,13 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../[...nextauth]/route"; // ✅ import correct auth config
+import { authOptions } from "../[...nextauth]/route"; // import correct auth config
 import { prisma } from "@/app/lib/prisma";
 
 export async function GET(req: NextRequest) {
+  let startTime:number = Date.now();
+  let ststusCode:number = 200;
   try {
     const session = await getServerSession(authOptions);
     console.log("This is session",session);
     if (!session || !session.user?.email) {
+      logRequest(req,ststusCode,startTime);
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
@@ -20,6 +23,7 @@ export async function GET(req: NextRequest) {
     });
 
     if (!user) {
+      logRequest(req,ststusCode,startTime);
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
@@ -63,6 +67,7 @@ export async function GET(req: NextRequest) {
     });
   } catch (error) {
     console.error("Get documents error:", error);
+    logRequest(req,ststusCode,startTime);
     return NextResponse.json(
       {
         error: "Failed to fetch documents",
@@ -76,4 +81,12 @@ export async function GET(req: NextRequest) {
       { status: 500 }
     );
   }
+
+  function logRequest(req: NextRequest, statusCode: number, startTime: number) {
+  const endTime = Date.now();
+  const duration = endTime - startTime;
+  console.log(
+    `[${req.method}] ${req.url} - Status: ${statusCode} - Time: ${duration}ms`
+  );
+}
 }

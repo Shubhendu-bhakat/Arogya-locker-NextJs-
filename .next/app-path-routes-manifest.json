@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/auth/[...nextauth]/route": "/api/auth/[...nextauth]",
+  "/api/auth/documents/[docId]/route": "/api/auth/documents/[docId]",
+  "/api/auth/documents/route": "/api/auth/documents",
+  "/api/auth/documents/uploades/route": "/api/auth/documents/uploades",
+  "/api/auth/signup/route": "/api/auth/signup",
+  "/chat/page": "/chat",
+  "/documents/page": "/documents",
+  "/documents/uploads/page": "/documents/uploads",
+  "/page": "/",
+  "/profile/page": "/profile",
+  "/signin/page": "/signin",
+  "/signup/page": "/signup"
+}

@@ -15,10 +15,12 @@ const s3 = new S3Client({
 const BUCKET_NAME = process.env.S3_BUCKET_NAME!;
 
 // DELETE document for authenticated user
+
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { docId: string } }
+  { params }: { params:  Promise<{ docId: string }> }
 ) {
+    const { docId } = await params;
   try {
     const session = await getServerSession(authOptions);
 
@@ -26,7 +28,7 @@ export async function DELETE(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const documentId = parseInt(params.docId);
+    const documentId = parseInt(docId);
 
     // Find the user
     const user = await prisma.user.findUnique({
@@ -66,7 +68,7 @@ export async function DELETE(
       }
     }
 
-    // 🟢 Delete from DB
+    // Delete from DB
     await prisma.document.delete({
       where: { id: documentId },
     });

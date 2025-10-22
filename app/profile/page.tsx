@@ -79,7 +79,7 @@ export default async function ProfilePage() {
             <span className={styles.infoLabelSimple}>Age:</span> {user.age ? `${user.age} years` : "Not provided"}
           </div>
           <div>
-            <span className={styles.infoLabelSimple}>Gender:</span> {user.gender || "Not provided"}
+            <span className={styles.infoLabelSimple}>Gender:</span> {user.sex || "Not provided"}
           </div>
         </div>
         <div className={styles.docsSectionSimple}>
