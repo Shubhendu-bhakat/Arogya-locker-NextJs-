@@ -1,0 +1,752 @@
+/* [next]/internal/font/google/geist_a71539c9.module.css [app-client] (css) */
+@font-face {
+  font-family: Geist;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/8a480f0b521d4e75-s.8e0177b5.woff2") format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+
+@font-face {
+  font-family: Geist;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/7178b3e590c64307-s.b97b3418.woff2") format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: Geist;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/caa3a2e1cccd8315-s.p.853070df.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Geist Fallback;
+  src: local(Arial);
+  ascent-override: 95.94%;
+  descent-override: 28.16%;
+  line-gap-override: 0.0%;
+  size-adjust: 104.76%;
+}
+
+.geist_a71539c9-module__T19VSG__className {
+  font-family: Geist, Geist Fallback;
+  font-style: normal;
+}
+
+.geist_a71539c9-module__T19VSG__variable {
+  --font-geist-sans: "Geist", "Geist Fallback";
+}
+
+/* [next]/internal/font/google/geist_mono_8d43a2aa.module.css [app-client] (css) */
+@font-face {
+  font-family: Geist Mono;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/4fa387ec64143e14-s.c1fdd6c2.woff2") format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+
+@font-face {
+  font-family: Geist Mono;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/bbc41e54d2fcbd21-s.799d8ef8.woff2") format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: Geist Mono;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../media/797e433ab948586e-s.p.dbea232f.woff2") format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Geist Mono Fallback;
+  src: local(Arial);
+  ascent-override: 74.67%;
+  descent-override: 21.92%;
+  line-gap-override: 0.0%;
+  size-adjust: 134.59%;
+}
+
+.geist_mono_8d43a2aa-module__8Li5zG__className {
+  font-family: Geist Mono, Geist Mono Fallback;
+  font-style: normal;
+}
+
+.geist_mono_8d43a2aa-module__8Li5zG__variable {
+  --font-geist-mono: "Geist Mono", "Geist Mono Fallback";
+}
+
+/* [project]/app/globals.css [app-client] (css) */
+.body {
+  color: #22314d;
+  background-color: #f7fafc;
+  font-family: Inter, Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* [project]/styles/footer.module.css [app-client] (css) */
+.footer-module__WlMSAW__footer {
+  color: #fff;
+  background-color: #1a1a1a;
+  margin-top: auto;
+  padding: 3rem 0 1rem;
+}
+
+.footer-module__WlMSAW__footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-module__WlMSAW__footerGrid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.footer-module__WlMSAW__footerColumn {
+  flex-direction: column;
+  display: flex;
+}
+
+.footer-module__WlMSAW__footerHeading {
+  color: #fff;
+  border-bottom: 2px solid #3b82f6;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.footer-module__WlMSAW__footerList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-module__WlMSAW__footerList li {
+  margin-bottom: .5rem;
+}
+
+.footer-module__WlMSAW__footerLink {
+  color: #d1d5db;
+  font-size: .875rem;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.footer-module__WlMSAW__footerLink:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.footer-module__WlMSAW__footerBottom {
+  text-align: center;
+  border-top: 1px solid #374151;
+  padding-top: 2rem;
+}
+
+.footer-module__WlMSAW__footerDescription {
+  color: #d1d5db;
+  max-width: 600px;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+.footer-module__WlMSAW__footerCopyright {
+  color: #9ca3af;
+  margin: 0;
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  .footer-module__WlMSAW__footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-module__WlMSAW__footerContent {
+    padding: 0 1rem;
+  }
+
+  .footer-module__WlMSAW__footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-module__WlMSAW__footerHeading {
+    font-size: 1rem;
+  }
+
+  .footer-module__WlMSAW__footerLink, .footer-module__WlMSAW__footerDescription {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-module__WlMSAW__footerGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-module__WlMSAW__footerContent {
+    padding: 0 .75rem;
+  }
+}
+
+/* [project]/styles/header.module.css [app-client] (css) */
+.header-module__hZHEWW__navbar {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e3f6fc;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all .3s;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 24px rgba(28, 167, 236, .133);
+}
+
+.header-module__hZHEWW__logo {
+  background: linear-gradient(135deg, #1ca7ec, #1fdbb6);
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  -webkit-background-clip: text;
+  background-clip: text;
+  align-items: center;
+  gap: .5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: filter .2s;
+  display: flex;
+}
+
+.header-module__hZHEWW__logo:hover {
+  filter: brightness(1.15) drop-shadow(0 2px 8px rgba(28, 167, 236, .267));
+}
+
+.header-module__hZHEWW__navCenter {
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+.header-module__hZHEWW__navLink {
+  color: #374151;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .3s;
+  position: relative;
+}
+
+.header-module__hZHEWW__navLink:hover {
+  color: #3b82f6;
+}
+
+.header-module__hZHEWW__navLink:after {
+  content: "";
+  background-color: #3b82f6;
+  width: 0;
+  height: 2px;
+  transition: width .3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.header-module__hZHEWW__navLink:hover:after {
+  width: 100%;
+}
+
+.header-module__hZHEWW__navLinks {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.header-module__hZHEWW__btn {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: .375rem;
+  padding: .5rem 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-block;
+}
+
+.header-module__hZHEWW__signin {
+  color: #3b82f6;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #3b82f6;
+}
+
+.header-module__hZHEWW__signin:hover {
+  color: #fff;
+  background-color: #3b82f6;
+}
+
+.header-module__hZHEWW__logout {
+  color: #fff;
+  background-color: #ef4444;
+}
+
+.header-module__hZHEWW__logout:hover {
+  background-color: #dc2626;
+}
+
+.header-module__hZHEWW__hamburger {
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 3px;
+  padding: .5rem;
+  display: none;
+}
+
+.header-module__hZHEWW__hamburgerLine {
+  transform-origin: center;
+  background-color: #374151;
+  width: 20px;
+  height: 2px;
+  transition: all .3s;
+}
+
+.header-module__hZHEWW__line1 {
+  transform: rotate(45deg)translate(5px, 5px);
+}
+
+.header-module__hZHEWW__line2 {
+  opacity: 0;
+}
+
+.header-module__hZHEWW__line3 {
+  transform: rotate(-45deg)translate(7px, -6px);
+}
+
+@media (max-width: 768px) {
+  .header-module__hZHEWW__navbar {
+    padding: 1rem;
+  }
+
+  .header-module__hZHEWW__navCenter, .header-module__hZHEWW__navLinks {
+    display: none;
+  }
+
+  .header-module__hZHEWW__hamburger {
+    display: flex;
+  }
+
+  .header-module__hZHEWW__logo {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-module__hZHEWW__navCenter {
+    gap: 1.5rem;
+  }
+
+  .header-module__hZHEWW__navbar {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* [project]/styles/heamburger.module.css [app-client] (css) */
+.heamburger-module__b281CG__navbar {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  background: rgba(255, 255, 255, .95);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  transition: all .3s;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.heamburger-module__b281CG__logo {
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.heamburger-module__b281CG__navCenter {
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+.heamburger-module__b281CG__navLink {
+  color: #374151;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .3s;
+  position: relative;
+}
+
+.heamburger-module__b281CG__navLink:hover {
+  color: #3b82f6;
+}
+
+.heamburger-module__b281CG__navLink:after {
+  content: "";
+  background-color: #3b82f6;
+  width: 0;
+  height: 2px;
+  transition: width .3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.heamburger-module__b281CG__navLink:hover:after {
+  width: 100%;
+}
+
+.heamburger-module__b281CG__navLinks {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.heamburger-module__b281CG__btn {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: .375rem;
+  padding: .5rem 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-block;
+}
+
+.heamburger-module__b281CG__signin {
+  color: #3b82f6;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #3b82f6;
+}
+
+.heamburger-module__b281CG__signin:hover {
+  color: #fff;
+  background-color: #3b82f6;
+}
+
+.heamburger-module__b281CG__logout {
+  color: #fff;
+  background-color: #ef4444;
+}
+
+.heamburger-module__b281CG__logout:hover {
+  background-color: #dc2626;
+}
+
+.heamburger-module__b281CG__hamburger {
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 3px;
+  padding: .5rem;
+  display: none;
+}
+
+.heamburger-module__b281CG__hamburgerLine {
+  transform-origin: center;
+  background-color: #374151;
+  width: 20px;
+  height: 2px;
+  transition: all .3s;
+}
+
+.heamburger-module__b281CG__line1 {
+  transform: rotate(45deg)translate(5px, 5px);
+}
+
+.heamburger-module__b281CG__line2 {
+  opacity: 0;
+}
+
+.heamburger-module__b281CG__line3 {
+  transform: rotate(-45deg)translate(7px, -6px);
+}
+
+.heamburger-module__b281CG__mobileMenuOverlay {
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, .5);
+  justify-content: flex-end;
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.heamburger-module__b281CG__mobileMenu {
+  background: #fff;
+  width: 280px;
+  height: 100vh;
+  padding: 2rem 1rem;
+  transition: transform .3s;
+  transform: translateX(0);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, .1);
+}
+
+.heamburger-module__b281CG__mobileNavLinks {
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.heamburger-module__b281CG__mobileNavLink {
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.heamburger-module__b281CG__mobileNavLink:hover {
+  color: #3b82f6;
+}
+
+.heamburger-module__b281CG__mobileAuthButtons {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .heamburger-module__b281CG__navbar {
+    padding: 1rem;
+  }
+
+  .heamburger-module__b281CG__navCenter, .heamburger-module__b281CG__navLinks {
+    display: none;
+  }
+
+  .heamburger-module__b281CG__hamburger {
+    display: flex;
+  }
+
+  .heamburger-module__b281CG__logo {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .heamburger-module__b281CG__mobileMenuOverlay {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heamburger-module__b281CG__navCenter {
+    gap: 1.5rem;
+  }
+
+  .heamburger-module__b281CG__navbar {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.heamburger-module__b281CG__mobileMenuWrapper {
+  z-index: 1200;
+  position: relative;
+}
+
+.heamburger-module__b281CG__hamburger {
+  cursor: pointer;
+  z-index: 1202;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  transition: filter .2s;
+  display: flex;
+}
+
+.heamburger-module__b281CG__line {
+  background: #1ca7ec;
+  border-radius: 2px;
+  width: 28px;
+  height: 3px;
+  transition: all .35s cubic-bezier(.4, 0, .2, 1);
+}
+
+.heamburger-module__b281CG__hamburger.heamburger-module__b281CG__open .heamburger-module__b281CG__line:first-child {
+  transform: translateY(8px)rotate(45deg);
+}
+
+.heamburger-module__b281CG__hamburger.heamburger-module__b281CG__open .heamburger-module__b281CG__line:nth-child(2) {
+  opacity: 0;
+}
+
+.heamburger-module__b281CG__hamburger.heamburger-module__b281CG__open .heamburger-module__b281CG__line:nth-child(3) {
+  transform: translateY(-8px)rotate(-45deg);
+}
+
+.heamburger-module__b281CG__mobileMenuOverlay {
+  z-index: 1200;
+  background: rgba(20, 60, 120, .25);
+  animation: .3s heamburger-module__b281CG__fadeInOverlay;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@keyframes heamburger-module__b281CG__fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.heamburger-module__b281CG__mobileMenu {
+  z-index: 1201;
+  background: #fff;
+  flex-direction: column;
+  width: 85vw;
+  max-width: 340px;
+  height: 100vh;
+  padding: 1.5rem 1.2rem 2rem;
+  animation: .35s cubic-bezier(.4, 0, .2, 1) heamburger-module__b281CG__slideInMenu;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: -4px 0 24px rgba(28, 167, 236, .133);
+}
+
+@keyframes heamburger-module__b281CG__slideInMenu {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.heamburger-module__b281CG__mobileMenuHeader {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.heamburger-module__b281CG__brandName {
+  background: linear-gradient(135deg, #1ca7ec, #1fdbb6);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-left: .5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.heamburger-module__b281CG__closeBtn {
+  color: #1ca7ec;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin-left: 1rem;
+  font-size: 2rem;
+  line-height: 1;
+  transition: color .2s;
+}
+
+.heamburger-module__b281CG__closeBtn:hover {
+  color: #1769c2;
+}
+
+.heamburger-module__b281CG__mobileNavLinks {
+  flex-direction: column;
+  gap: 1.2rem;
+  display: flex;
+}
+
+.heamburger-module__b281CG__mobileNavLink {
+  color: #0a4fa3;
+  border-radius: 8px;
+  padding: .9rem .5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+
+.heamburger-module__b281CG__mobileNavLink:hover {
+  color: #1ca7ec;
+  background: #e3f6fc;
+}
+
+.heamburger-module__b281CG__logoutBtn {
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: .9rem .5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.heamburger-module__b281CG__logoutBtn:hover {
+  background: linear-gradient(135deg, #ee5a52, #ff6b6b);
+}
+
+@media (min-width: 769px) {
+  .heamburger-module__b281CG__mobileMenu, .heamburger-module__b281CG__mobileMenuOverlay, .heamburger-module__b281CG__hamburger {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=%5Broot-of-the-server%5D__d294fb40._.css.map*/

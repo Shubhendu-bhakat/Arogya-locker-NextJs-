@@ -525,3 +525,23 @@
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
+
+.googleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.googleButton:hover {
+  background-color: #f5f5f5;
+  border-color: #aaa;
+}
