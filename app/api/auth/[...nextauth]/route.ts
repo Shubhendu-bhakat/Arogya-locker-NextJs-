@@ -101,6 +101,7 @@ export const authOptions = {
         if (!existingUser) {
           // Create new user in Prisma
           await prisma.user.create({
+            //@ts-ignore
             data: {
               username: user.name!,
               email: user.email!,
