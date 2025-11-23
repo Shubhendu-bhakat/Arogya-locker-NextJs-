@@ -1,9 +1,5 @@
-# CI/CD Pipeline for Arogya Locker
-# This workflow runs automatically when you push code to master/main branch
-# It checks if your code builds correctly and dependencies are safe
 
 name: CI/CD Pipeline
-
 # When to run this pipeline
 on:
   push:
@@ -105,7 +101,7 @@ jobs:
       # Check for security vulnerabilities in dependencies
       - name: Check for security issues
         run: npm audit --audit-level=high
-        continue-on-error: true  # Don't fail the pipeline, just warn
+        continue-on-error: true  
 
   # Job 3: Build Docker Image
   # This only runs when you push to master/main (not on pull requests)
