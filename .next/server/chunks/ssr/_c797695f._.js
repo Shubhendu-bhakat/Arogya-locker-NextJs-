@@ -1,3 +1,402 @@
-module.exports=[28990,a=>{a.v({button:"signin-module__mju_nq__button",error:"signin-module__mju_nq__error",fadeIn:"signin-module__mju_nq__fadeIn",footerLink:"signin-module__mju_nq__footerLink",footerText:"signin-module__mju_nq__footerText",form:"signin-module__mju_nq__form",formDivider:"signin-module__mju_nq__formDivider",formFadeIn:"signin-module__mju_nq__formFadeIn",googleButton:"signin-module__mju_nq__googleButton",iconPulse:"signin-module__mju_nq__iconPulse",input:"signin-module__mju_nq__input",inputGroup:"signin-module__mju_nq__inputGroup",label:"signin-module__mju_nq__label",loading:"signin-module__mju_nq__loading",loginLink:"signin-module__mju_nq__loginLink",loginText:"signin-module__mju_nq__loginText",medicalFloat:"signin-module__mju_nq__medicalFloat",medicalIcon:"signin-module__mju_nq__medicalIcon",medicalShake:"signin-module__mju_nq__medicalShake",medicalSpin:"signin-module__mju_nq__medicalSpin",medicalSuccess:"signin-module__mju_nq__medicalSuccess",securityBadge:"signin-module__mju_nq__securityBadge",signinBox:"signin-module__mju_nq__signinBox",signinContainer:"signin-module__mju_nq__signinContainer",slideInUp:"signin-module__mju_nq__slideInUp",subtitle:"signin-module__mju_nq__subtitle",success:"signin-module__mju_nq__success",successButton:"signin-module__mju_nq__successButton",title:"signin-module__mju_nq__title",trustIndicator:"signin-module__mju_nq__trustIndicator",trustIndicators:"signin-module__mju_nq__trustIndicators"})},42099,a=>{"use strict";a.s(["default",()=>o],42099);var b=a.i(87924),c=a.i(72131),d=a.i(75003),e=a.i(38246),f=a.i(28990),g={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},h=c.default.createContext&&c.default.createContext(g),i=["attr","size","title"];function j(){return(j=Object.assign.bind()).apply(this,arguments)}function k(a,b){var c=Object.keys(a);if(Object.getOwnPropertySymbols){var d=Object.getOwnPropertySymbols(a);b&&(d=d.filter(function(b){return Object.getOwnPropertyDescriptor(a,b).enumerable})),c.push.apply(c,d)}return c}function l(a){for(var b=1;b<arguments.length;b++){var c=null!=arguments[b]?arguments[b]:{};b%2?k(Object(c),!0).forEach(function(b){var d,e,f;d=a,e=b,f=c[b],(e=function(a){var b=function(a,b){if("object"!=typeof a||!a)return a;var c=a[Symbol.toPrimitive];if(void 0!==c){var d=c.call(a,b||"default");if("object"!=typeof d)return d;throw TypeError("@@toPrimitive must return a primitive value.")}return("string"===b?String:Number)(a)}(a,"string");return"symbol"==typeof b?b:b+""}(e))in d?Object.defineProperty(d,e,{value:f,enumerable:!0,configurable:!0,writable:!0}):d[e]=f}):Object.getOwnPropertyDescriptors?Object.defineProperties(a,Object.getOwnPropertyDescriptors(c)):k(Object(c)).forEach(function(b){Object.defineProperty(a,b,Object.getOwnPropertyDescriptor(c,b))})}return a}function m(a){var b=b=>{var d,{attr:e,size:f,title:g}=a,h=function(a,b){if(null==a)return{};var c,d,e=function(a,b){if(null==a)return{};var c={};for(var d in a)if(Object.prototype.hasOwnProperty.call(a,d)){if(b.indexOf(d)>=0)continue;c[d]=a[d]}return c}(a,b);if(Object.getOwnPropertySymbols){var f=Object.getOwnPropertySymbols(a);for(d=0;d<f.length;d++)c=f[d],!(b.indexOf(c)>=0)&&Object.prototype.propertyIsEnumerable.call(a,c)&&(e[c]=a[c])}return e}(a,i),k=f||b.size||"1em";return b.className&&(d=b.className),a.className&&(d=(d?d+" ":"")+a.className),c.default.createElement("svg",j({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},b.attr,e,h,{className:d,style:l(l({color:a.color||b.color},b.style),a.style),height:k,width:k,xmlns:"http://www.w3.org/2000/svg"}),g&&c.default.createElement("title",null,g),a.children)};return void 0!==h?c.default.createElement(h.Consumer,null,a=>b(a)):b(g)}function n(a){var b;return(b={tag:"svg",attr:{version:"1.1",x:"0px",y:"0px",viewBox:"0 0 48 48",enableBackground:"new 0 0 48 48"},child:[{tag:"path",attr:{fill:"#FFC107",d:"M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12\r\n	c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24\r\n	c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"},child:[]},{tag:"path",attr:{fill:"#FF3D00",d:"M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657\r\n	C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"},child:[]},{tag:"path",attr:{fill:"#4CAF50",d:"M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36\r\n	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"},child:[]},{tag:"path",attr:{fill:"#1976D2",d:"M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571\r\n	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"},child:[]}]},a=>c.default.createElement(m,j({attr:l({},b.attr)},a),function a(b){return b&&b.map((b,d)=>c.default.createElement(b.tag,l({key:d},b.attr),a(b.child)))}(b.child)))(a)}function o(){let[a,g]=(0,c.useState)({username:"",email:"",password:""}),[h,i]=(0,c.useState)(""),[j,k]=(0,c.useState)(!1),[l,m]=(0,c.useState)(!1),o=a=>{let{name:b,value:c}=a.target;g(a=>({...a,[b]:c}))},p=async b=>{b.preventDefault(),i(""),k(!0);try{let b=await (0,d.signIn)("credentials",{email:a.email,password:a.password,redirect:!1});b?.error?i("Invalid credentials. Please check your email and password."):b?.ok&&(await (0,d.getSession)()?m(!0):i("Authentication failed. Please try again."))}catch(a){console.error("Sign in error:",a),i("An unexpected error occurred. Please try again.")}finally{k(!1)}},q=async()=>{i(""),k(!0);try{await (0,d.signIn)("google",{callbackUrl:"/documents"})}catch(a){console.error("Google sign-in failed:",a),i("Google sign-in failed. Try again later.")}finally{k(!1)}};return l?(0,b.jsx)("div",{className:f.default.signinContainer,children:(0,b.jsxs)("div",{className:f.default.signinBox,children:[(0,b.jsx)("div",{className:f.default.medicalIcon,children:(0,b.jsx)("svg",{viewBox:"0 0 24 24",fill:"currentColor",children:(0,b.jsx)("path",{d:"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"})})}),(0,b.jsx)("h1",{className:f.default.title,children:"Welcome!"}),(0,b.jsx)("p",{className:f.default.subtitle,children:"You have successfully signed in"}),(0,b.jsx)(e.default,{href:"/documents",className:`${f.default.button} ${f.default.successButton}`,children:"Go to your medical documents"})]})}):(0,b.jsx)("div",{className:f.default.signinContainer,children:(0,b.jsxs)("div",{className:f.default.signinBox,children:[(0,b.jsx)("div",{className:f.default.medicalIcon,children:(0,b.jsx)("svg",{viewBox:"0 0 24 24",fill:"currentColor",children:(0,b.jsx)("path",{d:"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"})})}),(0,b.jsx)("h1",{className:f.default.title,children:"Welcome Back"}),(0,b.jsx)("p",{className:f.default.subtitle,children:"Sign in to access your medical portal"}),h&&(0,b.jsxs)("div",{className:f.default.error,children:[(0,b.jsx)("svg",{width:"16",height:"16",viewBox:"0 0 24 24",fill:"currentColor",children:(0,b.jsx)("path",{d:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"})}),h]}),(0,b.jsxs)("form",{onSubmit:p,className:f.default.form,noValidate:!0,children:[(0,b.jsxs)("div",{className:f.default.inputGroup,children:[(0,b.jsx)("label",{className:f.default.label,htmlFor:"email",children:"Email Address *"}),(0,b.jsx)("input",{id:"email",name:"email",type:"email",value:a.email,onChange:o,className:f.default.input,placeholder:"Enter your email",autoComplete:"email",required:!0})]}),(0,b.jsxs)("div",{className:f.default.inputGroup,children:[(0,b.jsx)("label",{className:f.default.label,htmlFor:"password",children:"Password *"}),(0,b.jsx)("input",{id:"password",name:"password",type:"password",value:a.password,onChange:o,className:f.default.input,placeholder:"Enter your password",autoComplete:"current-password",required:!0,minLength:6})]}),(0,b.jsx)("button",{type:"submit",className:`${f.default.button} ${j?f.default.loading:""}`,disabled:j,children:j?"Signing in...":"Sign In Securely"})]}),(0,b.jsx)("div",{className:f.default.formDivider,children:"or"}),(0,b.jsxs)("button",{onClick:q,className:f.default.googleButton,disabled:j,children:[(0,b.jsx)(n,{size:22,style:{marginRight:"8px"}}),"Continue with Google"]}),(0,b.jsxs)("p",{className:f.default.loginText,children:["Don't have an account?"," ",(0,b.jsx)(e.default,{href:"/signup",className:f.default.loginLink,children:"Create Account"})]})]})})}}];
+module.exports = [
+"[project]/styles/signin.module.css [app-ssr] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "button": "signin-module__mju_nq__button",
+  "error": "signin-module__mju_nq__error",
+  "fadeIn": "signin-module__mju_nq__fadeIn",
+  "footerLink": "signin-module__mju_nq__footerLink",
+  "footerText": "signin-module__mju_nq__footerText",
+  "form": "signin-module__mju_nq__form",
+  "formDivider": "signin-module__mju_nq__formDivider",
+  "formFadeIn": "signin-module__mju_nq__formFadeIn",
+  "googleButton": "signin-module__mju_nq__googleButton",
+  "iconPulse": "signin-module__mju_nq__iconPulse",
+  "input": "signin-module__mju_nq__input",
+  "inputGroup": "signin-module__mju_nq__inputGroup",
+  "label": "signin-module__mju_nq__label",
+  "loading": "signin-module__mju_nq__loading",
+  "loginLink": "signin-module__mju_nq__loginLink",
+  "loginText": "signin-module__mju_nq__loginText",
+  "medicalFloat": "signin-module__mju_nq__medicalFloat",
+  "medicalIcon": "signin-module__mju_nq__medicalIcon",
+  "medicalShake": "signin-module__mju_nq__medicalShake",
+  "medicalSpin": "signin-module__mju_nq__medicalSpin",
+  "medicalSuccess": "signin-module__mju_nq__medicalSuccess",
+  "securityBadge": "signin-module__mju_nq__securityBadge",
+  "signinBox": "signin-module__mju_nq__signinBox",
+  "signinContainer": "signin-module__mju_nq__signinContainer",
+  "slideInUp": "signin-module__mju_nq__slideInUp",
+  "subtitle": "signin-module__mju_nq__subtitle",
+  "success": "signin-module__mju_nq__success",
+  "successButton": "signin-module__mju_nq__successButton",
+  "title": "signin-module__mju_nq__title",
+  "trustIndicator": "signin-module__mju_nq__trustIndicator",
+  "trustIndicators": "signin-module__mju_nq__trustIndicators",
+});
+}),
+"[project]/app/signin/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>SignInPage
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-auth/react/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/styles/signin.module.css [app-ssr] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fc$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/fc/index.mjs [app-ssr] (ecmascript)"); // for Google icon
+"use client";
+;
+;
+;
+;
+;
+;
+function SignInPage() {
+    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        username: "",
+        email: "",
+        password: ""
+    });
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isSuccess, setIsSuccess] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const handleInputChange = (e)=>{
+        const { name, value } = e.target;
+        setFormData((prev)=>({
+                ...prev,
+                [name]: value
+            }));
+    };
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        setError("");
+        setIsLoading(true);
+        try {
+            const result = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signIn"])("credentials", {
+                email: formData.email,
+                password: formData.password,
+                redirect: false
+            });
+            if (result?.error) {
+                setError("Invalid credentials. Please check your email and password.");
+            } else if (result?.ok) {
+                const session = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSession"])();
+                if (session) setIsSuccess(true);
+                else setError("Authentication failed. Please try again.");
+            }
+        } catch (err) {
+            console.error("Sign in error:", err);
+            setError("An unexpected error occurred. Please try again.");
+        } finally{
+            setIsLoading(false);
+        }
+    };
+    const handleGoogleSignIn = async ()=>{
+        setError("");
+        setIsLoading(true);
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$react$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["signIn"])("google", {
+                callbackUrl: "/documents"
+            });
+        } catch (err) {
+            console.error("Google sign-in failed:", err);
+            setError("Google sign-in failed. Try again later.");
+        } finally{
+            setIsLoading(false);
+        }
+    };
+    // --- Success State ---
+    if (isSuccess) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].signinContainer,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].signinBox,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].medicalIcon,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            viewBox: "0 0 24 24",
+                            fill: "currentColor",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                d: "M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                            }, void 0, false, {
+                                fileName: "[project]/app/signin/page.tsx",
+                                lineNumber: 73,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 72,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/signin/page.tsx",
+                        lineNumber: 71,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title,
+                        children: "Welcome!"
+                    }, void 0, false, {
+                        fileName: "[project]/app/signin/page.tsx",
+                        lineNumber: 76,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].subtitle,
+                        children: "You have successfully signed in"
+                    }, void 0, false, {
+                        fileName: "[project]/app/signin/page.tsx",
+                        lineNumber: 77,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        href: "/documents",
+                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].button} ${__TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].successButton}`,
+                        children: "Go to your medical documents"
+                    }, void 0, false, {
+                        fileName: "[project]/app/signin/page.tsx",
+                        lineNumber: 78,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/signin/page.tsx",
+                lineNumber: 70,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/app/signin/page.tsx",
+            lineNumber: 69,
+            columnNumber: 7
+        }, this);
+    }
+    // --- Default Form ---
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].signinContainer,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].signinBox,
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].medicalIcon,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                        viewBox: "0 0 24 24",
+                        fill: "currentColor",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            d: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                        }, void 0, false, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 95,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/signin/page.tsx",
+                        lineNumber: 94,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 93,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title,
+                    children: "Welcome Back"
+                }, void 0, false, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 99,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].subtitle,
+                    children: "Sign in to access your medical portal"
+                }, void 0, false, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 100,
+                    columnNumber: 9
+                }, this),
+                error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].error,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            width: "16",
+                            height: "16",
+                            viewBox: "0 0 24 24",
+                            fill: "currentColor",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                            }, void 0, false, {
+                                fileName: "[project]/app/signin/page.tsx",
+                                lineNumber: 105,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 104,
+                            columnNumber: 13
+                        }, this),
+                        error
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 103,
+                    columnNumber: 11
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                    onSubmit: handleSubmit,
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].form,
+                    noValidate: true,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].inputGroup,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
+                                    htmlFor: "email",
+                                    children: "Email Address *"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/signin/page.tsx",
+                                    lineNumber: 114,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                    id: "email",
+                                    name: "email",
+                                    type: "email",
+                                    value: formData.email,
+                                    onChange: handleInputChange,
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input,
+                                    placeholder: "Enter your email",
+                                    autoComplete: "email",
+                                    required: true
+                                }, void 0, false, {
+                                    fileName: "[project]/app/signin/page.tsx",
+                                    lineNumber: 117,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 113,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].inputGroup,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].label,
+                                    htmlFor: "password",
+                                    children: "Password *"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/signin/page.tsx",
+                                    lineNumber: 132,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                    id: "password",
+                                    name: "password",
+                                    type: "password",
+                                    value: formData.password,
+                                    onChange: handleInputChange,
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input,
+                                    placeholder: "Enter your password",
+                                    autoComplete: "current-password",
+                                    required: true,
+                                    minLength: 6
+                                }, void 0, false, {
+                                    fileName: "[project]/app/signin/page.tsx",
+                                    lineNumber: 135,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 131,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "submit",
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].button} ${isLoading ? __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].loading : ""}`,
+                            disabled: isLoading,
+                            children: isLoading ? "Signing in..." : "Sign In Securely"
+                        }, void 0, false, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 149,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 111,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].formDivider,
+                    children: "or"
+                }, void 0, false, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 158,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                    onClick: handleGoogleSignIn,
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].googleButton,
+                    disabled: isLoading,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fc$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FcGoogle"], {
+                            size: 22,
+                            style: {
+                                marginRight: "8px"
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 166,
+                            columnNumber: 11
+                        }, this),
+                        "Continue with Google"
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 161,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].loginText,
+                    children: [
+                        "Don't have an account?",
+                        " ",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/signup",
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$styles$2f$signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].loginLink,
+                            children: "Create Account"
+                        }, void 0, false, {
+                            fileName: "[project]/app/signin/page.tsx",
+                            lineNumber: 172,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/signin/page.tsx",
+                    lineNumber: 170,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/app/signin/page.tsx",
+            lineNumber: 92,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/app/signin/page.tsx",
+        lineNumber: 91,
+        columnNumber: 5
+    }, this);
+}
+}),
+];
 
 //# sourceMappingURL=_c797695f._.js.map

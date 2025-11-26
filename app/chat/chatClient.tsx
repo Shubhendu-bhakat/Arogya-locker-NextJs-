@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
+import Image from "next/image";
 import styles from "../../styles/chat.module.css";
 
 interface Message {
   sender: "user" | "bot";
   senderName: string;
-  text: string;
+  text?: string;
+  imageUrl?: string;
   type: "text" | "image";
   time: string;
 }
@@ -17,6 +19,40 @@ export default function ChatClient({ firstName }: { firstName: string }) {
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
+
+  const formatTime = useCallback((value: string | number | Date) => {
+    return new Date(value).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  }, []);
+
+  const mapServerMessage = useCallback(
+    (msg: {
+      id: number;
+      messageType: "TEXT" | "IMAGE";
+      content: string | null;
+      mediaUrl: string | null;
+      createdAt: string;
+      user?: { username: string | null };
+    }): Message => {
+      if (msg.messageType === "IMAGE") {
+        return {
+          sender: "user",
+          senderName: msg.user?.username || firstName,
+          type: "image",
+          imageUrl: msg.mediaUrl ?? undefined,
+          time: formatTime(msg.createdAt),
+        };
+      }
+
+      return {
+        sender: "user",
+        senderName: msg.user?.username || firstName,
+        type: "text",
+        text: msg.content ?? "",
+        time: formatTime(msg.createdAt),
+      };
+    },
+    [firstName, formatTime]
+  );
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080"); // dummy backend
@@ -42,21 +78,60 @@ export default function ChatClient({ firstName }: { firstName: string }) {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const sendMessage = () => {
-    if (!input.trim()) return;
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const response = await fetch("/api/chat/messages", {
+          method: "GET",
+          credentials: "include",
+        });
 
-    const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        if (!response.ok) {
+          throw new Error("Failed to load chat history");
+        }
 
+        const data = await response.json();
+        if (data?.data) {
+          const hydratedMessages = data.data.map(mapServerMessage);
+          setMessages(hydratedMessages);
+        }
+      } catch (error) {
+        console.error("Failed to fetch chat history", error);
+      }
+    };
+
+    fetchMessages();
+  }, [mapServerMessage]);
+
+  const sendMessage = async () => {
+    const trimmedInput = input.trim();
+    if (!trimmedInput) return;
+
+    const now = formatTime(Date.now());
     const userMessage: Message = {
       sender: "user",
       senderName: firstName,
-      text: input,
+      text: trimmedInput,
       type: "text",
       time: now,
     };
-    setMessages((prev) => [...prev, userMessage]);
 
-    socket?.send(input);
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+
+    try {
+      await fetch("/api/chat/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: trimmedInput }),
+      });
+    } catch (error) {
+      console.error("Failed to persist chat message", error);
+    }
+
+    socket?.send(trimmedInput);
 
     setTimeout(() => {
       setMessages((prev) => [
@@ -70,24 +145,46 @@ export default function ChatClient({ firstName }: { firstName: string }) {
         },
       ]);
     }, 800);
-
-    setInput("");
   };
 
-  const sendImage = (file: File) => {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const imageData = reader.result as string;
-      const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const sendImage = async (file: File) => {
+    if (!file) return;
 
-      const userImage: Message = {
-        sender: "user",
-        senderName: firstName,
-        text: imageData,
-        type: "image",
-        time: now,
-      };
+    const now = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("/api/chat/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Image upload failed");
+      }
+
+      const { chatMessage, url } = await response.json();
+      const userImage =
+        chatMessage && chatMessage.messageType === "IMAGE"
+          ? mapServerMessage({
+              id: chatMessage.id,
+              messageType: chatMessage.messageType,
+              content: chatMessage.content,
+              mediaUrl: chatMessage.mediaUrl ?? url,
+              createdAt: chatMessage.createdAt,
+              user: chatMessage.user,
+            })
+          : {
+              sender: "user" as const,
+              senderName: firstName,
+              imageUrl: url,
+              type: "image" as const,
+              time: now,
+            };
+
       setMessages((prev) => [...prev, userImage]);
+      socket?.send(url);
 
       setTimeout(() => {
         setMessages((prev) => [
@@ -101,8 +198,13 @@ export default function ChatClient({ firstName }: { firstName: string }) {
           },
         ]);
       }, 800);
-    };
-    reader.readAsDataURL(file);
+    } catch (error) {
+      console.error("Image upload failed", error);
+    } finally {
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    }
   };
 
   return (
@@ -125,13 +227,16 @@ export default function ChatClient({ firstName }: { firstName: string }) {
               >
                 {msg.type === "text" ? (
                   <p>{msg.text}</p>
-                ) : (
-                  <img
-                    src={msg.text}
+                ) : msg.imageUrl ? (
+                  <Image
+                    src={msg.imageUrl}
                     alt="Uploaded"
                     className={styles.imageMessage}
+                    width={200}
+                    height={200}
+                    unoptimized
                   />
-                )}
+                ) : null}
               </div>
               <span className={styles.timestamp}>{msg.time}</span>
             </div>

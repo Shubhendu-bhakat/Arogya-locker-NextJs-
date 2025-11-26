@@ -119,6 +119,18 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   handler satisfies RouteHandlerConfig<"/api/auth/signup">
 }
 
+// Validate ../../app/api/chat/messages/route.ts
+{
+  const handler = {} as typeof import("../../app/api/chat/messages/route.js")
+  handler satisfies RouteHandlerConfig<"/api/chat/messages">
+}
+
+// Validate ../../app/api/chat/upload/route.ts
+{
+  const handler = {} as typeof import("../../app/api/chat/upload/route.js")
+  handler satisfies RouteHandlerConfig<"/api/chat/upload">
+}
+
 
 
 

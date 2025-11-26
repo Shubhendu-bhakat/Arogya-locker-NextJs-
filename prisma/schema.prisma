@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -24,6 +23,7 @@ model User {
   updatedAt DateTime
   provider  Provider  @default(CREDENTIALS)
   documents Document[]
+  chatMessages ChatMessage[]
 }
 
 model Document {
@@ -40,6 +40,7 @@ model Document {
   updatedAt    DateTime         @updatedAt
   
   user         User             @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Restrict)
+  chatMessages ChatMessage[]
   
   @@map("documents")
 }
@@ -49,6 +50,7 @@ enum DocumentCategory {
   XRAY
   LAB_TESTS
   GENERAL_DOCUMENTS
+  CHAT_UPLOADS
   OTHERS
 }
 
@@ -57,4 +59,24 @@ enum DocumentStatus {
   UPLOADED
   PROCESSING
   FAILED
+}
+
+model ChatMessage {
+  id          Int              @id @default(autoincrement())
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      Int
+  document    Document?        @relation(fields: [documentId], references: [id], onDelete: SetNull)
+  documentId  Int?
+  content     String?
+  mediaUrl    String?
+  messageType ChatMessageType  @default(TEXT)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@map("chat_messages")
+}
+
+enum ChatMessageType {
+  TEXT
+  IMAGE
 }
