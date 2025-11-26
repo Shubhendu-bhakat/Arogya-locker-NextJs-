@@ -1,10 +1,8 @@
 var R=require("../../../../../chunks/[turbopack]_runtime.js")("server/app/api/auth/documents/uploades/route.js")
-R.c("server/chunks/node_modules_next_6658c7c2._.js")
-R.c("server/chunks/node_modules_next-auth_882d5fc4._.js")
-R.c("server/chunks/node_modules_openid-client_d15f72b3._.js")
-R.c("server/chunks/node_modules_jose_dist_node_cjs_bd88468e._.js")
-R.c("server/chunks/node_modules_bc634cef._.js")
-R.c("server/chunks/[root-of-the-server]__4a7911d2._.js")
-R.m("[project]/.next-internal/server/app/api/auth/documents/uploades/route/actions.js [app-rsc] (server actions loader, ecmascript)")
-R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/auth/documents/uploades/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
-module.exports=R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/auth/documents/uploades/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports
+R.c("server/chunks/[root-of-the-server]__8042acc6._.js")
+R.c("server/chunks/node_modules_next_d739b5ba._.js")
+R.c("server/chunks/[root-of-the-server]__8a7c08cf._.js")
+R.c("server/chunks/_9cf34af3._.js")
+R.m(33318)
+R.m(56135)
+module.exports=R.m(56135).exports

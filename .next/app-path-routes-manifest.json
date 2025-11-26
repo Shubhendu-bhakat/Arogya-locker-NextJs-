@@ -5,6 +5,8 @@
   "/api/auth/documents/route": "/api/auth/documents",
   "/api/auth/documents/uploades/route": "/api/auth/documents/uploades",
   "/api/auth/signup/route": "/api/auth/signup",
+  "/api/chat/messages/route": "/api/chat/messages",
+  "/api/chat/upload/route": "/api/chat/upload",
   "/chat/page": "/chat",
   "/documents/page": "/documents",
   "/documents/uploads/page": "/documents/uploads",
